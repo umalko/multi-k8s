@@ -17,7 +17,7 @@ after_success:
         - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
         # Take those images and push it to the docker hub
         - docker push mavsvl/multi-client
-        - mavsvl/multi-nginx
-        - mavsvl/multi-server
-        - mavsvl/multi-worker
+        - docker push mavsvl/multi-nginx
+        - docker push mavsvl/multi-server
+        - docker push mavsvl/multi-worker
 

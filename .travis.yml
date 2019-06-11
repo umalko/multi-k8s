@@ -21,3 +21,15 @@ after_success:
         - docker push mavsvl/multi-server
         - docker push mavsvl/multi-worker
 
+deploy:
+        provider: elasticbeanstalk
+        region: eu-west-1
+        app: multi-docker
+        env: MultiDocker-env
+        bucket_name: elasticbeanstalk-eu-west-1-728900069172
+        bucket_path: docker_multi
+        on:
+                branch: master
+        access_key_id: $AWS_ACCESS_KEY
+        secret_access_key:
+                secure: $AWS_SECRET_KEY
